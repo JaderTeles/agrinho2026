@@ -1,295 +1,117 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concurso Agrinho 2026 - Programação</title>
+    <title>Agrinho 2026 - Programação</title>
     <style>
-        /* Variáveis de Cores */
-        :root {
-            --primary-color: #2e7d32; /* Verde Escuro */
-            --secondary-color: #81c784; /* Verde Claro */
-            --text-color: #333;
-            --bg-color: #f4f9f4;
-        }
-
-        /* Reset Básico */
-        * {
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
         }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* Menu de Navegação */
-        nav {
-            background-color: var(--primary-color);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #c8e6c9;
-        }
-
-        /* Banner Principal */
+        /* Banner Superior */
         header {
-            position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=1350&q=80') center/cover;
+            background-color: #2d5a27;
             color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.5rem;
-            font-weight: 300;
-        }
-
-        /* Conteiner Principal */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
             padding: 40px 20px;
+            text-align: center;
         }
-
-        /* Seções */
-        section {
-            margin-bottom: 50px;
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        /* Navegação Simples */
+        nav {
+            background: #eee;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #2d5a27;
+            font-weight: bold;
+        }
+        /* Conteúdo */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
             background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
-        section h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--secondary-color);
+        h2 {
+            color: #2d5a27;
+            border-bottom: 2px solid #6ab04c;
             padding-bottom: 5px;
         }
-
-        /* Destaques (Tema, Realização) */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .info-card {
-            background: var(--bg-color);
-            padding: 20px;
-            border-left: 5px solid var(--primary-color);
-            border-radius: 4px;
-        }
-
-        /* Categorias */
-        .cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            width: 300px;
-            text-align: center;
-            padding: 20px;
-            transition: transform 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
-            width: 80px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            color: var(--primary-color);
+        .categoria {
+            background: #f1f8e9;
+            padding: 15px;
+            border-radius: 5px;
             margin-bottom: 10px;
         }
-
-        /* Cronômetro */
-        .countdown {
-            text-align: center;
-            background: var(--primary-color);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            font-size: 1.5rem;
+        .prazo {
+            color: #d32f2f;
             font-weight: bold;
+            font-size: 1.1em;
         }
-
-        /* Rodapé */
         footer {
-            background: var(--primary-color);
-            color: white;
             text-align: center;
             padding: 20px;
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: #c8e6c9;
-            text-decoration: none;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            header p { font-size: 1.2rem; }
-            nav ul { flex-direction: column; align-items: center; gap: 10px; }
+            font-size: 0.9em;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="#sobre">Sobre o Concurso</a></li>
-            <li><a href="#categorias">Categorias</a></li>
-            <li><a href="#inscricao">Inscrições e Prazos</a></li>
-        </ul>
-    </nav>
-
     <header>
         <h1>Concurso Agrinho 2026</h1>
-        <p>Categoria: Programação e Tecnologia</p>
+        <p>Edição Especial: Programação e Robótica</p>
     </header>
+
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#regras">Regras</a>
+        <a href="#links">Links Úteis</a>
+    </nav>
 
     <div class="container">
         
         <section id="sobre">
             <h2>Sobre o Concurso</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>Tema do Ano</h3>
-                    <p><strong>"Agro forte, futuro sustentável: equilíbrio entre produção e ambiente"</strong></p>
-                </div>
-                <div class="info-card">
-                    <h3>Objetivo</h3>
-                    <p>Integrar a tecnologia ao cotidiano do agronegócio paranaense, estimulando o raciocínio lógico e a resolução de problemas reais do campo.</p>
-                </div>
-                <div class="info-card">
-                    <h3>Realização</h3>
-                    <p>SENAR-PR em parceria com a Secretaria de Estado da Educação do Paraná (SEED-PR).</p>
-                </div>
-            </div>
+            <p>O Concurso Agrinho é o maior programa de responsabilidade social do Sistema FAEP/SENAR-PR. A categoria <strong>Programação</strong> incentiva alunos a criarem soluções tecnológicas para os desafios do agronegócio e da sustentabilidade.</p>
+            <p><strong>Tema 2026:</strong> "Agro forte, futuro sustentável: equilíbrio entre produção e ambiente".</p>
         </section>
 
         <section id="categorias">
-            <h2>Categorias e Tecnologias</h2>
-            <p style="margin-bottom: 20px; text-align: center;">O concurso é destinado exclusivamente a alunos da Rede Estadual de Ensino do Paraná.</p>
-            <div class="cards">
-                <div class="card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Scratch_cat.svg/1200px-Scratch_cat.svg.png" alt="Logo Scratch">
-                    <h3>Subcategoria 1</h3>
-                    <p><strong>Público:</strong> 6º e 7º anos (Ensino Fundamental)</p>
-                    <p><strong>Tecnologia:</strong> Linguagem Scratch</p>
-                </div>
-                <div class="card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Scratch_cat.svg/1200px-Scratch_cat.svg.png" alt="Logo Scratch">
-                    <h3>Subcategoria 2</h3>
-                    <p><strong>Público:</strong> 8º e 9º anos (Ensino Fundamental)</p>
-                    <p><strong>Tecnologia:</strong> Linguagem Scratch</p>
-                </div>
-                <div class="card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1051/1051277.png" alt="Logos HTML CSS JS">
-                    <h3>Subcategoria 3</h3>
-                    <p><strong>Público:</strong> Ensino Médio (Todas as séries)</p>
-                    <p><strong>Tecnologia:</strong> Front-End (HTML, CSS e JavaScript)</p>
-                </div>
+            <h2>Categorias</h2>
+            
+            <div class="categoria">
+                <h3>Ensino Fundamental I e II</h3>
+                <p><strong>Ferramenta:</strong> Scratch</p>
+                <p>Criação de jogos ou animações interativas sobre o tema do ano.</p>
+            </div>
+
+            <div class="categoria">
+                <h3>Ensino Médio</h3>
+                <p><strong>Ferramenta:</strong> HTML/CSS/JS ou Python</p>
+                <p>Desenvolvimento de aplicações web ou sistemas que resolvam problemas reais do campo.</p>
             </div>
         </section>
 
-        <section id="inscricao">
-            <h2>Prazos e Submissão</h2>
-            <p>O link do projeto deve ser postado dentro do Ambiente Virtual de Aprendizagem (AVA) de Programação até a data limite. Fique atento às <a href="#" style="color: var(--primary-color);">regras do regulamento completo</a>.</p>
-            <br>
-            <div class="countdown" id="timer">
-                Calculando tempo restante...
-            </div>
+        <section id="regras">
+            <h2>Informações Importantes</h2>
+            <ul>
+                <li><strong>Quem pode participar:</strong> Alunos da rede pública do Paraná.</li>
+                <li><strong>Submissão:</strong> Os projetos devem ser enviados via plataforma oficial da SEED-PR.</li>
+                <li class="prazo">Prazo final de entrega: 14 de Junho de 2026.</li>
+            </ul>
         </section>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Concurso Agrinho - Programação e Tecnologia | Realização: SENAR-PR e SEED-PR</p>
-        <p><a href="#">Baixar Regulamento Completo (PDF)</a></p>
-    </footer>
-
-    <script>
-        // Configurando a data de encerramento do concurso (14 de Junho de 2026, às 23:59:59)
-        const prazoFinal = new Date("June 14, 2026 23:59:59").getTime();
-
-        const atualizarCronometro = setInterval(function() {
-            const agora = new Date().getTime();
-            const distancia = prazoFinal - agora;
-
-            // Cálculos matemáticos para dias, horas, minutos e segundos
-            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-            // Exibindo o resultado no elemento com id="timer"
-            document.getElementById("timer").innerHTML = 
-                "Prazo Final (14/06/2026): " + dias + "d " + horas + "h " + minutos + "m " + segundos + "s ";
-
-            // Mensagem se o prazo acabar
-            if (distancia < 0) {
-                clearInterval(atualizarCronometro);
-                document.getElementById("timer").innerHTML = "AS INSCRIÇÕES ESTÃO ENCERRADAS!";
-            }
-        }, 1000);
-
-        // Smooth scroll para os links do menu
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                window.scrollTo({
-                    top: targetElement.offsetTop - 60, // compensa a altura do menu
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-
-</body>
-</html>
